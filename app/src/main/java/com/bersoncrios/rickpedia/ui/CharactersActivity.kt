@@ -41,8 +41,8 @@ class CharactersActivity : BaseActivity(), OnClickListener {
     }
 
     override fun onItemClickListener(result: Result) {
-        val intent = Intent(applicationContext, CharDetailsActivity::class.java)
-        intent.putExtra("id", result.id)
-        startActivity(intent)
+        val i: Intent = Intent(this, CharDetailsActivity::class.java)
+        i.putExtra("id", result.id)
+        startActivity(i)
     }
 }

@@ -1,5 +1,6 @@
 package com.bersoncrios.rickpedia.ui
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.lifecycle.Observer
@@ -12,12 +13,18 @@ import com.bersoncrios.rickpedia.viewmodel.CharacterViewModel
 class CharDetailsActivity : BaseActivity() {
 
     private lateinit var viewModel: CharacterViewModel
-    private val extras: Bundle? = intent.extras
-    private val id = extras!!.getInt("id")
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.layout_char_details_activity)
+
+        var b: Bundle? = intent.extras
+        var id: Int = 0
+
+        if (b != null) {
+            id = b!!.getInt("id")
+        }
+
 
         viewModel = ViewModelProvider(this)
             .get(CharacterViewModel::class.java)
