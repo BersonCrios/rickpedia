@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">Rickpedia</string>
+    <string name="title_textview_home">Rickpédia</string>
+    <string name="name_example">Rick Sanches</string>
+    <string name="title_activity_character_detail">CharacterDetail</string>
+</resources>
