@@ -51,11 +51,13 @@ dependencies {
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutines_version"
     implementation "com.github.bumptech.glide:glide:$glide_version"
     implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation "androidx.paging:paging-runtime:$paging_version"
 
     annotationProcessor "com.github.bumptech.glide:compiler:$glide_version"
 
     testImplementation 'junit:junit:4.12'
     testImplementation "org.koin:koin-test:$koin_version"
+    testImplementation "androidx.paging:paging-common:$paging_version"
 
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
