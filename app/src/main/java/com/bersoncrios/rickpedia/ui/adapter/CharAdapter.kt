@@ -27,9 +27,9 @@ class CharAdapter(private val items: ArrayList<Result>, private val onClickListe
         LayoutInflater.from(parent.context).inflate(R.layout.item_character, parent, false)
     )
 
-    fun update(countries: List<Result>) {
+    fun update(chars: List<Result>) {
         items.clear()
-        items.addAll(countries)
+        items.addAll(chars)
         notifyDataSetChanged()
     }
 

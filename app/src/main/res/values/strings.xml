@@ -3,4 +3,14 @@
     <string name="title_textview_home">Rickpédia</string>
     <string name="name_example">Rick Sanches</string>
     <string name="title_activity_character_detail">CharacterDetail</string>
+    <string name="especie_example">Human</string>
+    <string name="gender_sample">Male</string>
+    <string name="status_example">Alive</string>
+    <string name="origin_example">Earth</string>
+    <string name="episode_name_exampe">Rick Potion #9</string>
+    <string name="air_date_example">January 27, 2014</string>
+    <string name="episode_example">S01E06</string>
+    <string name="dialog_episode_nome_ep">Nome do Episódio:</string>
+    <string name="dialog_episode_data_ep">Data de Lançamento:</string>
+    <string name="dialog_episode_numero_ep">Numero do Episódio</string>
 </resources>

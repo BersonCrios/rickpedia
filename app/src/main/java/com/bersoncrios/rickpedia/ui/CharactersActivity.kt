@@ -2,12 +2,13 @@ package com.bersoncrios.rickpedia.ui
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Toast
+import android.util.Log
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bersoncrios.rickpedia.R
 import com.bersoncrios.rickpedia.base.BaseActivity
+import com.bersoncrios.rickpedia.model.Episode
 import com.bersoncrios.rickpedia.model.Result
 import com.bersoncrios.rickpedia.ui.adapter.CharAdapter
 import com.bersoncrios.rickpedia.ui.listener.OnClickListener
@@ -24,25 +25,34 @@ class CharactersActivity : BaseActivity(), OnClickListener {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.layout_characters_activity)
 
+        configAdapter()
+        findChars()
+    }
+
+    private fun findChars() {
         viewModel = ViewModelProvider(this)
             .get(CharacterViewModel::class.java)
 
+        viewModel.fetchChars()
+
+        viewModel.items.observe(this, Observer {
+            charAdapter.update(it.results)
+        })
+    }
+
+    private fun configAdapter() {
         PersonagensRecyclerView.apply {
             layoutManager = LinearLayoutManager(context)
             adapter = charAdapter
         }
-
-        viewModel.fetchChars()
-
-        viewModel.items.observe(this, Observer{
-            charAdapter.update(it.results)
-        })
-
     }
 
     override fun onItemClickListener(result: Result) {
         val i: Intent = Intent(this, CharDetailsActivity::class.java)
         i.putExtra("id", result.id)
         startActivity(i)
+    }
+
+    override fun onItemClickListener(Episode: Episode) {
     }
 }

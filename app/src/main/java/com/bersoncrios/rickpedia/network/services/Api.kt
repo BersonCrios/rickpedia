@@ -1,6 +1,7 @@
 package com.bersoncrios.rickpedia.network.services
 
 import com.bersoncrios.rickpedia.model.Chars
+import com.bersoncrios.rickpedia.model.Episode
 import com.bersoncrios.rickpedia.model.Result
 import retrofit2.Response
 import retrofit2.http.GET
@@ -12,4 +13,7 @@ interface Api {
 
     @GET("character/{id}")
     suspend fun getDetailsChar(@Path("id") id: Int): Response<Result>
+
+    @GET("episode/{id}")
+    suspend fun getEpisodeDetails(@Path("id") id: Int): Response<Episode>
 }
