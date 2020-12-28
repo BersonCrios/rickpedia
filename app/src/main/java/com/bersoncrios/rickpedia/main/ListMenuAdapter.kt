@@ -1,17 +1,16 @@
-package com.bersoncrios.rickpedia.ui.adapter
+package com.bersoncrios.rickpedia.main
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bersoncrios.rickpedia.R
-import com.bersoncrios.rickpedia.model.Episode
-import com.bersoncrios.rickpedia.ui.listener.OnClickListener
-import kotlinx.android.synthetic.main.item_episodio.view.*
+import com.bersoncrios.rickpedia.mvvm.view.listener.OnClickListener
+import kotlinx.android.synthetic.main.item_menu.view.*
 
-class EpisodeAdapter(private val items: ArrayList<Episode>, private val onClickListener: OnClickListener) : RecyclerView.Adapter<EpisodeAdapter.ViewHolder>() {
+class ListMenuAdapter(private val items: ArrayList<ListMenuUi>, private val onClickListener: OnClickListener) : RecyclerView.Adapter<ListMenuAdapter.ViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) = ViewHolder(
-        LayoutInflater.from(parent.context).inflate(R.layout.item_episodio, parent, false)
+        LayoutInflater.from(parent.context).inflate(R.layout.item_menu, parent, false)
     )
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
@@ -24,17 +23,17 @@ class EpisodeAdapter(private val items: ArrayList<Episode>, private val onClickL
 
     override fun getItemCount(): Int = items.size
 
-    fun update(episodes: List<Episode>){
+    fun update(menu: List<ListMenuUi>){
         items.clear()
-        items.addAll(episodes)
+        items.addAll(menu)
         notifyDataSetChanged()
     }
 
     class ViewHolder(view: View): RecyclerView.ViewHolder(view) {
-        private val episodeNumber = view.episodeTextView
+        private val titulo = view.itemMenuTv
 
-        fun bind(episode: Episode) {
-            episodeNumber.text = episode.episode
+        fun bind(menu: ListMenuUi) {
+            titulo.text = menu.titulo
         }
     }
 }

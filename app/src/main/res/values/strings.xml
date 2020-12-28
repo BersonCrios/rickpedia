@@ -13,4 +13,5 @@
     <string name="dialog_episode_nome_ep">Nome do Episódio:</string>
     <string name="dialog_episode_data_ep">Data de Lançamento:</string>
     <string name="dialog_episode_numero_ep">Numero do Episódio</string>
+    <string name="indice">INDICE</string>
 </resources>

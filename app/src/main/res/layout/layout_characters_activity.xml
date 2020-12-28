@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     style="@style/primaryScreen"
-    tools:context=".ui.CharactersActivity">
+    tools:context=".mvvm.view.CharactersActivity">
 
     <TextView
         android:id="@+id/MainActivityScreenTitleTextView"

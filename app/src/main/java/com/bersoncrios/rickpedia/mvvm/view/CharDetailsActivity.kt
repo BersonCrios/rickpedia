@@ -1,6 +1,5 @@
-package com.bersoncrios.rickpedia.ui
+package com.bersoncrios.rickpedia.mvvm.view
 
-import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.lifecycle.Observer
@@ -9,13 +8,14 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.bersoncrios.rickpedia.R
 import com.bersoncrios.rickpedia.base.BaseActivity
 import com.bersoncrios.rickpedia.helper.Extra.Companion.extractExtras
+import com.bersoncrios.rickpedia.main.ListMenuUi
 import com.bersoncrios.rickpedia.model.Episode
 import com.bersoncrios.rickpedia.model.Result
-import com.bersoncrios.rickpedia.ui.adapter.EpisodeAdapter
-import com.bersoncrios.rickpedia.ui.dialog.EpisodeDetailsDialog
-import com.bersoncrios.rickpedia.ui.listener.OnClickListener
-import com.bersoncrios.rickpedia.viewmodel.CharacterViewModel
-import com.bersoncrios.rickpedia.viewmodel.EpisodeViewModel
+import com.bersoncrios.rickpedia.mvvm.view.adapter.EpisodeAdapter
+import com.bersoncrios.rickpedia.mvvm.view.dialog.EpisodeDetailsDialog
+import com.bersoncrios.rickpedia.mvvm.view.listener.OnClickListener
+import com.bersoncrios.rickpedia.mvvm.viewmodel.CharacterViewModel
+import com.bersoncrios.rickpedia.mvvm.viewmodel.EpisodeViewModel
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
 import kotlinx.android.synthetic.main.layout_char_details_activity.*
@@ -121,4 +121,6 @@ class CharDetailsActivity : BaseActivity(), OnClickListener {
     override fun onItemClickListener(episode: Episode) {
         EpisodeDetailsDialog(this, episode.name, episode.airDate, episode.episode).show()
     }
+
+    override fun onItemClickListener(menu: ListMenuUi) {}
 }

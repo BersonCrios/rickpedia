@@ -1,4 +1,4 @@
-package com.bersoncrios.rickpedia.ui.dialog
+package com.bersoncrios.rickpedia.mvvm.view.dialog
 
 import android.app.Dialog
 import android.content.Context

@@ -1,4 +1,4 @@
-package com.bersoncrios.rickpedia.ui
+package com.bersoncrios.rickpedia.mvvm.view
 
 import android.content.Intent
 import android.os.Bundle
@@ -7,11 +7,12 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bersoncrios.rickpedia.R
 import com.bersoncrios.rickpedia.base.BaseActivity
+import com.bersoncrios.rickpedia.main.ListMenuUi
 import com.bersoncrios.rickpedia.model.Episode
 import com.bersoncrios.rickpedia.model.Result
-import com.bersoncrios.rickpedia.ui.adapter.CharAdapter
-import com.bersoncrios.rickpedia.ui.listener.OnClickListener
-import com.bersoncrios.rickpedia.viewmodel.CharacterViewModel
+import com.bersoncrios.rickpedia.mvvm.view.adapter.CharAdapter
+import com.bersoncrios.rickpedia.mvvm.view.listener.OnClickListener
+import com.bersoncrios.rickpedia.mvvm.viewmodel.CharacterViewModel
 import kotlinx.android.synthetic.main.layout_characters_activity.*
 
 class CharactersActivity : BaseActivity(), OnClickListener {
@@ -52,6 +53,7 @@ class CharactersActivity : BaseActivity(), OnClickListener {
         startActivity(i)
     }
 
-    override fun onItemClickListener(Episode: Episode) {
-    }
+    override fun onItemClickListener(Episode: Episode) {}
+
+    override fun onItemClickListener(menu: ListMenuUi) {}
 }

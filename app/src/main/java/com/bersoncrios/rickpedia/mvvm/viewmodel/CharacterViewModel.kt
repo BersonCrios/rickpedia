@@ -1,4 +1,4 @@
-package com.bersoncrios.rickpedia.viewmodel
+package com.bersoncrios.rickpedia.mvvm.viewmodel
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
