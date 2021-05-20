@@ -6,6 +6,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bersoncrios.rickpedia.R
+import com.bersoncrios.rickpedia.Speech.SpeechActivity
 import com.bersoncrios.rickpedia.model.Episode
 import com.bersoncrios.rickpedia.model.Result
 import com.bersoncrios.rickpedia.mvvm.view.CharactersActivity
@@ -22,12 +23,14 @@ class MainActivity : AppCompatActivity(), OnClickListener {
         setContentView(R.layout.activity_main)
         configAdapter()
 
+        val speech = ListMenuUi("Speech")
         val mvvm = ListMenuUi("MVVM")
         val mvi = ListMenuUi("MVI")
         val mvc = ListMenuUi("MVC")
         val mvp = ListMenuUi("MVP")
         val clean = ListMenuUi("CLEAN")
 
+        menuArray.add(speech)
         menuArray.add(mvvm)
         menuArray.add(mvi)
         menuArray.add(mvc)
@@ -51,6 +54,9 @@ class MainActivity : AppCompatActivity(), OnClickListener {
     override fun onItemClickListener(menu: ListMenuUi) {
         var i: Intent? = null
         when(menu.titulo){
+            "Speech" -> {
+                i = Intent(this, SpeechActivity::class.java)
+            }
             "MVVM" -> {
                 i = Intent(this, CharactersActivity::class.java)
             }

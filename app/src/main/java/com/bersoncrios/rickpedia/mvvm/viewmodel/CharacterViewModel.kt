@@ -1,9 +1,6 @@
 package com.bersoncrios.rickpedia.mvvm.viewmodel
 
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.viewModelScope
+import androidx.lifecycle.*
 import com.bersoncrios.rickpedia.model.Chars
 import com.bersoncrios.rickpedia.model.Result
 import com.bersoncrios.rickpedia.network.ConfigureRetrofit

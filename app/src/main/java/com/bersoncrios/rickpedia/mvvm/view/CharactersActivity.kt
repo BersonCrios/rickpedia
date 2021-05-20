@@ -6,6 +6,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bersoncrios.rickpedia.R
+import com.bersoncrios.rickpedia.SharedPref
 import com.bersoncrios.rickpedia.base.BaseActivity
 import com.bersoncrios.rickpedia.main.ListMenuUi
 import com.bersoncrios.rickpedia.model.Episode
@@ -20,11 +21,9 @@ class CharactersActivity : BaseActivity(), OnClickListener {
     private lateinit var viewModel: CharacterViewModel
     private val charAdapter = CharAdapter(arrayListOf(), this)
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.layout_characters_activity)
-
         configAdapter()
         findChars()
     }
@@ -50,6 +49,7 @@ class CharactersActivity : BaseActivity(), OnClickListener {
     override fun onItemClickListener(result: Result) {
         val i: Intent = Intent(this, CharDetailsActivity::class.java)
         i.putExtra("id", result.id)
+//        SharedPref.saveCharacter(result.name)
         startActivity(i)
     }
 

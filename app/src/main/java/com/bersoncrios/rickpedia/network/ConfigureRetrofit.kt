@@ -3,6 +3,7 @@ package com.bersoncrios.rickpedia.network
 import com.bersoncrios.rickpedia.model.Chars
 import com.bersoncrios.rickpedia.model.Episode
 import com.bersoncrios.rickpedia.model.Result
+import com.bersoncrios.rickpedia.model.completeLocation.Location
 import com.bersoncrios.rickpedia.network.services.Api
 import retrofit2.Response
 import retrofit2.Retrofit
@@ -16,6 +17,7 @@ class ConfigureRetrofit {
         .create(Api::class.java)
 
     suspend fun getChars(): Response<Chars> = api.getCharacter()
+    suspend fun getLocations(): Response<Location> = api.getLocation()
     suspend fun  getCharsDetail(id: Int): Response<Result> = api.getDetailsChar(id)
     suspend fun  getEpisodeDetails(id: Int): Response<Episode> = api.getEpisodeDetails(id)
 

@@ -9,6 +9,7 @@ import org.koin.core.context.startKoin
 class App: Application() {
     override fun onCreate() {
         super.onCreate()
+        SharedPref.init(this)
         startKoin {
             androidContext(this@App)
             modules(DependencyModule.modules)
